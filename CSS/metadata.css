@@ -1,0 +1,533 @@
+/* metadata.css */
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+ul,li{
+    list-style: none;
+    text-decoration: none;
+    display: inline;
+}
+a{
+    text-decoration: none;
+    /* color: white; */
+}
+/* 头部-------------------------------------- */
+.header{
+    width: 100%;
+    height:490px;
+    background-image: url(../images/all-bg.png);
+    background-size: 100% 100%;
+}
+.header a{
+    color: white;
+}
+/* 头部图标 */
+.logo{
+    width: 120px;
+    height: 45.3px;
+    position: relative;
+    float: left;
+    left: 4.9%;
+    top: 24px;
+}
+
+/* 头部导航 */
+.nav{
+    width: 100%;
+    height:90px;
+    background-color:rgba(87, 153, 253, 0.4);
+}
+.nav .t-ul{
+    width: 100%;
+    height: 25px;
+    position: relative;
+    top: 46.6%;
+    left: 55.8%;
+}
+.t-li{
+    width: 79px;
+    height: 100%;
+    margin-right: 5%;
+    letter-spacing: 1.5px;
+    color: white;
+    font-size: 18px;
+    font-family: "Microsoft Yahei";
+}
+.t-li3{
+    margin-right:0;
+}
+
+/*头部导航鼠标移动下划线效果 */
+.text-underline{
+    display: inline;
+    text-align: center;
+    position: relative;
+}
+.text-underline::after{
+    position: absolute;
+    left: 0;
+    top: 100%;
+    content: '';
+    background-color: #00EAFF;
+    width: 90%;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    transition: all .5s;
+    -webkit-transition: all .5s;
+}
+.text-underline:hover::after{
+    float: left;
+    height: 6px;
+    width:111px;
+    top: 43px;
+    margin-left: -18px;
+    border-radius: 5px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+/* 头部-导航提示说明框 */
+/* 数据地图 */
+.downDataMap{
+    display: none;
+    width: 100%;
+    height: 240px;
+    background: rgba(0,234,255,0.50);
+}
+.DataMapContent{
+    width: 58.2%;
+    height: 198px;
+    float: left;
+    margin-left: 18%;
+    margin-top: -365px;
+}
+.dataMapDetailTitle{
+    margin-top: 20px;
+    font-size: 18px;
+    letter-spacing: 0.25px;
+    line-height: 25px;
+    color: white;
+}
+.dataMapDetailText{
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    line-height: 25px;
+    color: white;
+}
+
+/* 权限申请 */
+.downAccessRequest{
+    display : none;
+    width: 100%;
+    height: 240px;
+    background: rgba(0,234,255,0.5);
+}
+.AccessRequestContent{
+    width: 58.2%;
+    height: 198px;
+    float: left;
+    margin-left: 18%;
+    margin-top: -365px;
+}
+.AccessRequestDetailTitle{
+    font-size: 18px;
+    letter-spacing: 0.25px;
+    line-height: 25px;
+    color: white;
+    margin-top: 20px;
+}
+.AccessRequestDetailText{
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    line-height: 25px;
+    color: white;
+}
+
+/* 报表数据 */
+.downReportData{
+    display: none;
+    width: 100%;
+    height: 240px;
+    background: rgba(0,234,255,0.50);
+}
+.ReportDataContent{
+    width: 58.2%;
+    height: 198px;
+    float: left;
+    margin-left: 18%;
+    margin-top: -365px;
+}
+.ReportDataDetailTitle{
+    font-size: 18px;
+    letter-spacing: 0.25px;
+    line-height: 25px;
+    color: white;
+    margin-top: 20px;
+}
+.ReportDataDetailText{
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    line-height: 25px;
+    color: white;
+}
+
+/*头部-主题文字 */
+#main-text{
+    width: 504px;
+    height: 114px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-150%);
+    /* border:1px solid red; */
+}
+
+/*头部-页面轮播按钮切换 */
+.tab-status-button{
+    float: left;
+    margin-top: 358px;
+    margin-left:42%;
+}
+
+/* 内容切换区域----------------------------- */
+.dataAndApproval{
+    width: 100%;
+    height: 641px;
+}
+.tab-wrapper{
+    width: 100%;
+    height: 221px;
+}
+
+/* 切换图标和文字*/
+.tab-menu{
+    width: 100%;
+    height: 218px;
+}
+.tab-menu li:hover{
+    cursor: pointer;
+}
+.tab-icon1,.tab-icon2{
+    width: 70.3px;
+    height: 67.5px;
+    position: relative;
+    top: 76px;
+}
+.tab-icon1{
+    left: 29%;
+}
+.tab-icon2{
+    left: 56.25%;
+}
+.tab-icon1-text1,.tab-icon2-text2{
+    width:79px;
+    height: 33px;
+    position: relative;
+    top: 120px;
+    font-size: 24px;
+    color:black;
+    letter-spacing: 1.5px;
+}
+.tab-icon1-text1{
+    left: 24%;
+}
+.tab-icon2-text2{
+    left: 50.35%;
+}
+@media screen and (min-width: 1920px){
+    .tab-icon2{
+        left: 58%;
+    }
+    .tab-icon1-text1{
+        left: 25%;
+    }
+    .tab-icon2-text2{
+        left: 53.35%;
+    }
+}
+
+/* 内容区域切换的内容------------------------- */
+.tab-content{
+    width:100%;
+    height: 420px;
+    position: relative;
+    top: 66.5%;
+}
+
+/* 元数据------------------------------------ */
+.meta-content{
+    height: 100%;
+    background-color: rgb(244,245,248);
+}
+
+/* 元数据标题*/
+.tab-content .meta-content-title{
+    position: relative;
+    left: 39%;
+    top: 46px;
+    width:409px;
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background-image: url(../images/title-box.png);
+    background-size:100% 100%;
+    color: #194E9F;
+}
+
+/* 元数据内容区域*/
+.meta-content .meta-content-text{
+    width: 100%;
+    height: 218.3px;
+    position: relative;
+    top:60px;
+}
+/* 三角形小图标 */
+.meta-content-text .little-triangle{
+    width:0;
+    height: 0;
+    border-right: 40px solid transparent;
+    border-left: 40px solid transparent;
+    border-bottom: 22px solid rgb(244,245,248);
+    position: relative;
+    top: -58%;
+    left: 28.6%;
+}
+/* 四个小块 */
+.meta-content-text .meta-content-little-icon{
+    display: inline-block;
+    width: 14%;
+    height: 100%;
+    background-image: url(../images/text-box.png);
+    background-size:100% 100%;
+}
+.meta-content-text .l-icon1{
+    margin-left: 17%;
+    position: relative;
+    top: -20px;
+}
+.meta-content-text .l-icon2{
+    margin-left: -5.9%;
+}
+.meta-content-text .l-icon3{
+    margin-left: -5.9%;
+}
+.meta-content-text .l-icon4{
+    margin-left: -5.9%;
+    position: relative;
+    top: -20px;
+}
+/* 小块上的文字 */
+.l-text1,.l-text2,.l-text3,.l-text4{
+    position: relative;
+    left: 39.1%;
+    top: 46px;
+    text-align: center;
+    font-weight: bold;
+    color: #194E9F;
+}
+.l-text2{
+    top: 37px;
+    left: 42%;
+}
+.l-text3{
+    top: 39px;
+    left: 41%;
+}
+.l-text4{
+    top: 47px;
+    left: 44%;
+}
+.d-number1,.d-number2,.d-number3,.d-number4{
+    position: relative;
+    left: 9%;
+    top: 51.5%;
+    letter-spacing: 1px;
+    color: #194E9F;
+}
+.d-number2{
+    top: 42%;
+}
+.d-number3{
+    top: 42%;
+}
+.d-number4{
+    top: 51%;
+}
+.d-number1 span{ 
+    text-indent:5px;
+    font-size: 24px;
+}
+.d-number2 span{
+    text-indent:5px;
+    font-size: 24px;
+}
+.d-number3 span{
+    text-indent:5px;
+    font-size: 24px;
+}
+.d-number4 span{
+    text-indent:5px;
+    font-size: 24px;
+}
+.d-saturation1,.d-saturation2,.d-saturation3,.d-saturation4{
+    position: relative;
+    left: 9%;
+    top: 55%;
+    letter-spacing: 1px;
+    color: #194E9F;
+}
+.d-saturation2{
+    top: 45%;
+}
+.d-saturation3{
+    top: 45%;
+}
+.d-saturation4{
+    top: 54%;
+}
+.d-saturation1 span{
+    font-size: 24px;
+}
+.d-saturation2 span{
+    font-size: 24px;
+}
+.d-saturation3 span{
+    font-size: 24px;
+}
+.d-saturation4 span{
+    font-size: 24px;
+}
+/* 小块之间的连接符 */
+.meta-content-text .meta-middle-conbine-icon{
+    display: inline-block;
+    width: 10.3%;
+    height: 34px;
+    position: relative;
+    top:-25px;
+    left: -2.9%;
+    background-image: url(../images/connection-btn.png);
+    background-size:100% 100%;
+}
+/* 元数据备注文字 */
+.meta-content-text .meta-remarks-text{
+    position: relative;
+    left: 17%;
+    top: 15px;
+    width: 30%;
+    font-size: 14px;
+    letter-spacing: 0.7px;
+    color:  #194E9F;
+}
+.meta-content-text .time-record{
+    position: relative;
+    left: 75%;
+    top: -5px;
+    width: 30%;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color:  #194E9F;
+}
+
+/* 审批时效------------------------------------ */
+.time-limit-content{
+    height: 100%;
+    background-color: rgb(244,245,248);
+}
+/* 小三角图标 */
+.time-limit-content .little-triangle{
+    width:0;
+    height: 0;
+    border-right: 40px solid transparent;
+    border-left: 40px solid transparent;
+    border-bottom: 22px solid rgb(244,245,248);
+    position: relative;
+    top:-4%;
+    left: 66%;
+}
+/* 标题 */
+.time-limit-content .time-limit-content-tittle1{
+    width: 35.9%;
+    position: relative;
+    left: 19.6%;
+    color: #194E9F;
+    font-size: 20px;
+    text-align: left;
+    font-weight: bold;
+    letter-spacing: 1.11px;
+    /* border: 1px solid blue; */
+}
+.t-circle{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    position: relative;
+    top: -3px;
+    margin-right:12px;
+    background-color:#00EAFF ;
+    border-radius: 50%;
+}
+.t-bigSize{
+    margin-left:10px;
+    font-size: 36px;
+}
+/* 表一 */
+.time-limit-content-text1{
+    width: 35.9%;
+    height: 73%;   
+    position: relative;
+    left: 16.6%;
+    /* border: 1px solid pink; */
+}
+#time-limit-content-text1{
+    height: 400px;
+    width: 415px;
+    position: relative;
+    left: 78px;
+    top: -40px;
+    /* border: 1px solid blue; */
+}
+
+
+/* 表二 */
+.time-limit-content .time-limit-content-tittle2{
+    width: 35.9%;
+    position: relative;
+    left: 59%;
+    top: -358px;
+    color: #194E9F;
+    font-size: 20px;
+    text-align: left;
+    font-weight: bold;
+    letter-spacing: 1.11px;
+    /* border: 1px solid blue; */
+}
+.time-limit-content-text2{
+    width: 35.9%;
+    height: 73%;   
+    position: relative;
+    left: 60%;
+    top:-360px;
+    /* border: 1px solid pink; */
+}
+#time-limit-content-text2{
+    height: 410px;
+    width: 415px;
+    position: relative;
+    left: 0;
+    top: -40px;
+    /* border: 1px solid blue; */
+}
+
+.time-limit-content .time-limit-time-record{
+    position: relative;
+    left: 74%;
+    top: -334px;
+    width: 30%;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color:  #194E9F;
+}

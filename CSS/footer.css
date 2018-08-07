@@ -1,0 +1,204 @@
+/* 文章区域----------------------------- */
+.article{
+    width:100%;
+    height: 243px;
+    position: relative;
+    top: 92px;
+    bottom: 152px;
+    /* border: 1px solid blue; */
+}
+
+/* 数据治理发文-------------------------- */
+.data-governance{
+    height: 89%;
+}
+.data-governance .data-governance-title{
+    position: relative;
+    left: 17%;
+}
+.data-governance-title .data-governance-title-text{
+    position: relative;
+    top: -3px;
+    left: 10px;
+    color:#202020;
+    font-size: 24px;
+}
+.data-governance-title .data-governance-more{
+    position: relative;
+    left: 18.5%;
+    font-size: 14px;
+}
+@media screen and (min-width: 1920px){
+    .data-governance-title .data-governance-more{
+        left: 17%;
+    }
+}
+.data-governance-more a{
+    color: #00EAFF;
+}
+/* 数据发文文章列表样式----------------------- */
+.data-governance-detail{
+    width: 36%;
+    height:97%;
+    position: relative;
+    left: 17%;
+    /* border: 1px solid red; */
+}
+
+.governance-detail-all .governance-detail-each{
+    display: block;
+    margin: 17px 0;
+    font-size: 13px;
+}
+
+.detail-advance-bg{
+    display: inline-block;
+    width:14px;
+    height: 14px; 
+    color: white;
+    text-align: center;
+    font-size: 10px;
+    line-height: 14px;
+    background-color:#D8D8D8;
+    border-radius: 2px;
+}
+.dd1{
+   background-image: url(../images/new.png);
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+.governance-detail-title{
+    display: inline-block;
+    width: 223px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #202020;
+}
+.governance-detail-time{
+    display: inline-block;
+    color: #202020;   
+    margin-left: 41px;
+    margin-right:41px;
+}
+@media screen and (min-width: 1920px){
+
+   .governance-detail-time{
+        margin-left: 60px;
+        margin-right:60px;
+    }
+}
+.governance-detail-department{
+    display: inline-block;
+    width: 95px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #202020;
+}
+
+/* 工具学习文章---------------- */
+.tool-study{
+    position: relative;
+    left: 55%;
+    top:-216px;
+    /* border: 1px solid red; */
+}
+@media screen and (min-width: 1920px){
+    .tool-study{
+        left: 59%;
+    }
+}
+.tool-study-title .tool-study-title-text{
+    position: relative;
+    top: -3px;
+    left: 10px;
+    color:#202020;
+    font-size: 24px;
+}
+.tool-study-title .tool-study-more{
+    position: relative;
+    left: 19%;
+    font-size: 14px;
+}
+@media screen and (min-width: 1920px){
+    .tool-study-title .tool-study-more{
+        left: 17%;
+    }
+}
+.tool-study-more a{
+    color: #00EAFF;
+}
+/* 工具学习文章列表样式-------------------- */
+.tool-study-detail{
+    width: 36%;
+    height: 86%;
+    /* border: 1px solid red; */
+}
+.tool-study-detail-all .tool-study-detail-each{
+    display: block;
+    margin: 17px 0;
+    font-size: 13px;
+}
+.tool-study-advance-bg{
+    display: inline-block;
+    width:14px;
+    height: 14px; 
+    color: white;
+    text-align: center;
+    font-size: 10px;
+    line-height: 14px;
+    background-color:#D8D8D8;
+    border-radius: 2px;
+}
+.tool-study-detail-title{
+    display: inline-block;
+    color: #202020;
+    width: 223px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/*.tool-study-detail-title:hover{
+    width:auto;
+}*/
+.tool-study-detail-time{
+    display: inline-block;
+    color: #202020;   
+    margin-left: 41px;
+    margin-right:41px;
+}
+@media screen and (min-width: 1920px){
+    .tool-study-detail-time{ 
+        margin-left: 60px;
+        margin-right:60px;
+    }
+}
+.tool-study-detail-department{
+    display: inline-block;
+    width: 108px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    color: #202020;
+}
+/*.tool-study-detail-department:hover{
+    width:auto;
+}*/
+
+
+/* 页脚----------------------------------- */
+.footer{
+    width: 100%;
+    height: 50px;
+    position: relative;
+    top: 151px;
+    color: white;
+    line-height: 50px;
+    font-size:12px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    background-color: black;
+    /* border: 1px solid red; */
+}

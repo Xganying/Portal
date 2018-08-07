@@ -1,0 +1,405 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Portal首页-元数据</title>
+
+        <!-- <link rel="stylesheet" href="./CSS/adaptive.css"> -->
+        <link rel="stylesheet" href="./CSS/metadata.css">
+        <link rel="stylesheet" href="./CSS/footer.css">
+    </head>
+
+    <body>
+
+        <!-- 头部 -->
+        <header class="header" id="header">
+            <a href=""><img src="./images/logo.png" alt="logo" class="logo"></a>
+            <nav class="nav">
+                <ul class="t-ul">
+                    <li class="t-li" @mouseover="showDataMapDetail" @mouseout="hideDataMapDetail" >
+                        <span class="text-underline"><a href="#">数据地图</a></span>
+                    </li>
+                    <li class="t-li" @mouseover="showAccessRequestDetail" @mouseout="hideAccessRequestDetail" >
+                        <span class="text-underline"><a href="#">权限申请</a></span>
+                    </li>
+                    <li class="t-li t-li3" @mouseover="showReportDataDetail" @mouseout="hideReportDataDetail">
+                        <span class="text-underline"><a href="#">报表数据</a></span>
+                    </li>
+                </ul>
+            </nav>
+            <img src="./images/tab-status-button.png" class="tab-status-button">
+            <!-- 数据地图 -->
+            <div class="downDataMap" id="downDataMap">
+                <div class="DataMapContent">
+                    <p class="dataMapDetailTitle">数据地图介绍</p>
+                    <p class="dataMapDetailText">
+                        数据地图系统是由数据治理室开发的一款支持全行元数据、数据授权管理的系统性数据应用、
+                        权责管理工具；数据地图系统包括：数据字典、授权管理、配置管理等功能模块，
+                        不同角色可在地图系统查看/维护元数据（表结构、血缘关系、中文描述、库表负责部门、
+                        系统负责部门、数据属主部门、库表与产品对应关系等）、查看历史数据授权及执行情况、
+                        管理数据权限生命周期、管理维护开发资源等。
+                    </p>
+                </div>
+            </div>
+            <!-- 权限申请 -->
+            <div class="downAccessRequest" id="downAccessRequest">
+                <div class="AccessRequestContent">
+                    <p class="AccessRequestDetailTitle">权限申请系统介绍</p> 
+                    <p class="AccessRequestDetailText">
+                        权限申请系统是由数据治理室开发的一款数据使用权限申请系统；
+                        权限申请系统包括申请记录管理、申请单审批等功能模块。
+                        以用户为中心，基于场景设计表单申请流程，解决了“不知如何申请流程、
+                        不知数据在哪里、不知如何填写表单、表单重复提交”等问题。
+                    </p>
+                    <p  class="AccessRequestDetailTitle">权限申请类型</p>
+                    <p class="AccessRequestDetailText">
+                        1、生产数据采集提取&nbsp; &nbsp; &nbsp; 
+                        2、数据应用开发-bdp数据表授权&nbsp; &nbsp; &nbsp;&nbsp;
+                        3、数据应用开发-binlog解析授权&nbsp; 
+                        4、数据分析（BDAP）-数据导入&nbsp; &nbsp; &nbsp; 
+                        5、数据分析（BDAP）-数据授权&nbsp; 
+                        6、应用系统新增用户-报表平台
+                    </p>
+                </div>
+            </div>
+            <!-- 数据报表 -->
+            <div class="downReportData" id="downReportData">
+                <div class="ReportDataContent">
+                    <p class="ReportDataDetailTitle"> 报表数据介绍</p>
+                    <p class="ReportDataDetailText">
+                        数据报表系统是由数据治理室开发的一款支持全行元数据、数据授权管理的系统性数据应用、
+                        权责管理工具；数据地图系统包括：数据字典、授权管理、配置管理等功能模块，
+                        不同角色可在地图系统查看/维护元数据（表结构、血缘关系、中文描述、库表负责部门、
+                        系统负责部门、数据属主部门、库表与产品对应关系等）、查看历史数据授权及执行情况、
+                        管理数据权限生命周期、管理维护开发资源等。
+                    </p>
+                </div> 
+            </div>
+        </header> 
+
+        <!-- 内容区域 -->
+        <section class="dataAndApproval" id="tab-content">
+            
+            <div class="tab-wrapper">
+                <ul class="tab-menu">
+                    <li class="metadata active" @click="showMetaData">
+                        <img src="./images/tab-icon1.png" class="tab-icon1">
+                        <span class="tab-icon1-text1">元数据</span>
+                    </li>
+                    <li class="timeLimit" id="timeLimit" @click="showTimeLimitData">
+                        <img src="./images/tab-icon2.png" class="tab-icon2">
+                        <span class="tab-icon2-text2">审批时效</span>
+                    </li>
+                </ul>
+                
+                <div class="tab-content">
+                    
+                    <!-- 元数据 -->
+                    <div class="meta-content"  id="meta-content">
+                        <!-- 标题 -->
+                        <div class="meta-content-title">数据库数量/数据含义饱和度</div>
+                        <div class="meta-content-text">
+                            <p class="little-triangle"></p>
+                            <!-- TDSQL -->
+                            <div class="meta-content-little-icon l-icon1">
+                                <span class="meta-content-little-text l-text1">TDSQL</span>
+                                <p class="d-number1">数据库数量<span>&nbsp;400</span></p>
+                                <p class="d-saturation1">数据含义饱和度<span>&nbsp;90%</span></p>
+                            </div>
+                            <div class="meta-middle-conbine-icon conbine-icon1"></div>
+                            <!-- BDP -->
+                            <div class="meta-content-little-icon l-icon2">
+                                <span class="meta-content-little-text l-text2">&thinsp;BDP<br/><span>HIVE</span></span>
+                                <p class="d-number2">数据库数量<span>&nbsp;80</span></p>
+                                <p class="d-saturation2">数据含义饱和度<span>&nbsp;70%</span></p>
+                            </div>
+                            <div class="meta-middle-conbine-icon conbine-icon2"></div>  
+                            <!-- BDAP -->
+                            <div class="meta-content-little-icon l-icon3">
+                                <span class="meta-content-little-text l-text3">BDAP<br/>&thinsp;<span>HIVE</span></span>
+                                <p class="d-number3">数据库数量<span>&nbsp;70</span></p>
+                                <p class="d-saturation3">数据含义饱和度 <span>&nbsp;60%</span></p>
+                            </div>
+                            <div class="meta-middle-conbine-icon conbine-icon3"></div>
+                            <!-- SAS -->
+                            <div class="meta-content-little-icon l-icon4">
+                                <span class="meta-content-little-text l-text4">SAS<br/></span>
+                                <p class="d-number4">数据库数量<span>&nbsp;60</span></p>
+                                <p class="d-saturation4">数据含义饱和度<span>&nbsp;60%</span></p>
+                            </div>
+                            <p class="meta-remarks-text">注: 数据含义饱和度=含注释字段量/字段总量</p>
+                            <p class="time-record">统计时间: 截止到 <span> 2018 </span> 年 <span> 6 </span>月</p>
+                        </div> 
+                    </div>
+
+                    <!-- 审批时效 -->
+                    <div class="time-limit-content" id="time-limit-content" style="display: none;">
+                        <p class="little-triangle"></p>
+                        <!-- 表格1 -->
+                        <div class="time-limit-content-tittle1">
+                            <span class="t-circle"></span> 
+                            <span>6</span>月权限审批效率环比提高<span class="t-bigSize">19%</span>
+                        </div>
+                        <div class="time-limit-content-text1">
+                            <div id="time-limit-content-text1"></div>
+                        </div>
+                        <!-- 表格2 -->
+                        <div class="time-limit-content-tittle2">
+                            <span class="t-circle"></span>
+                            <span>6</span>月权限审批单耗时最短部门<span class="t-bigSize">TOP3</span>
+                        </div>
+                        <div class="time-limit-content-text2">
+                            <div id="time-limit-content-text2"></div>
+                        </div>
+                        <p class="time-limit-time-record">统计时间: 截止到 <span> 2018 </span> 年 <span> 6 </span>月</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="article">
+                <div class="data-governance">
+                    <p class="data-governance-title">
+                        <img src="./images/title-icon.png" width="7px" height="23px">
+                        <span class="data-governance-title-text">数据治理发文</span> 
+                        <span class="data-governance-more"><a href="">more ></a></span>
+                    </p>
+                    <div class="data-governance-detail">
+                        <ul class="governance-detail-all">
+                            <li class="governance-detail-each">
+                                <a href=""> 
+                                    <span class="detail-advance-bg dd1"></span>
+                                    <span class="governance-detail-title" title="《微众银行数据治理管理办法》《微众银行数据治理管理办法》">《微众银行数据治理管理办法》《微众银行数据治理管理办法》</span> 
+                                    <span class="governance-detail-time">2018-06-23</span> 
+                                    <span class="governance-detail-department">数据治理办公室</span> 
+                                </a>
+                            </li>
+                            <li class="governance-detail-each">
+                                <a href=""> 
+                                    <span class="detail-advance-bg dd2">2</span>
+                                    <span class="governance-detail-title">《微众银行数据认责和授权管理办法》</span> 
+                                    <span class="governance-detail-time">2018-06-23</span> 
+                                    <span class="governance-detail-department" title="零售互联网产品部产品部">零售互联网产品部产品部</span> 
+                                </a>
+                            </li>
+                            <li class="governance-detail-each">
+                                <a href=""> 
+                                    <span class="detail-advance-bg dd3">3</span>
+                                    <span class="governance-detail-title">《微众银行数据分级和授权管理办法》</span> 
+                                    <span class="governance-detail-time">2018-06-23 </span> 
+                                    <span class="governance-detail-department">数据治理办公室</span> 
+                                </a>
+                            </li>
+                            <li class="governance-detail-each">
+                                <a href=""> 
+                                    <span class="detail-advance-bg">4</span>
+                                    <span class="governance-detail-title">《微众银行敏感数据操作间管理办法》</span> 
+                                    <span class="governance-detail-time">2018-06-23 </span> 
+                                    <span class="governance-detail-department">数据治理办公室</span> 
+                                </a>
+                            </li>
+                            <li class="governance-detail-each">
+                                <span class="detail-advance-bg">5</span>
+                                <span class="governance-detail-title">《微众银行数据治理管理办法》</span> 
+                                <span class="governance-detail-time">2018-06-23 </span> 
+                                <span class="governance-detail-department">科技管理部</span> 
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+
+                <!-- 工具学习文章 -->
+                <div class="tool-study">
+                    <p class="tool-study-title">
+                        <img src="./images/title-icon.png" width="7px" height="23px">
+                        <span class="tool-study-title-text">工具学习文章</span> 
+                        <span class="tool-study-more"><a href="">more ></a></span>
+                    </p>
+                    <div class="tool-study-detail">
+                        <ul class="tool-study-detail-all">
+                            <li class="tool-study-detail-each">
+                                <a href=""> 
+                                    <span class="tool-study-advance-bg">1</span>
+                                    <span class="tool-study-detail-title">关于sqlscan的XXXXXXXXXXXX</span> 
+                                    <span class="tool-study-detail-time">2018-06-23</span> 
+                                    <span class="tool-study-detail-department">donesi（司东华）</span> 
+                                </a>
+                            </li>
+                            <li class="tool-study-detail-each">
+                                <a href=""> 
+                                    <span class="tool-study-advance-bg">2</span>
+                                    <span class="tool-study-detail-title">关于sqlscan的XXXXXXXXX</span> 
+                                    <span class="tool-study-detail-time">2018-06-23</span> 
+                                    <span class="tool-study-detail-department" title="cynthiaxie（谢干英）">cynthiaxie（谢干英）</span> 
+                                </a>
+                            </li>
+                            <li class="tool-study-detail-each">
+                                <a href=""> 
+                                    <span class="tool-study-advance-bg">3</span>
+                                    <span class="tool-study-detail-title" title="关于sqlscan的XXXXXXXXXXXXXXXXXXXXXX">关于sqlscan的XXXXXXXXXXXXXXXXXXXXXX</span> 
+                                    <span class="tool-study-detail-time">2018-06-23</span> 
+                                    <span class="tool-study-detail-department">sissyli(林妹妹)</span> 
+                                </a>
+                            </li>
+                            <li class="tool-study-detail-each">
+                                <a href=""> 
+                                    <span class="tool-study-advance-bg">4</span>
+                                    <span class="tool-study-detail-title">关于sqlscan的XXXXXXXXXXX</span> 
+                                    <span class="tool-study-detail-time">2018-06-23</span> 
+                                    <span class="tool-study-detail-department" title="liminghuang（黄黎明）">liminghuang（黄黎明）</span> 
+                                </a>
+                            </li>
+                            <li class="tool-study-detail-each">
+                                <a href=""> 
+                                    <span class="tool-study-advance-bg">5</span>
+                                    <span class="tool-study-detail-title">关于sqlscan的XXXXXXXXXXXX</span> 
+                                    <span class="tool-study-detail-time">2018-06-23</span> 
+                                    <span class="tool-study-detail-department">leohe（大卫）</span> 
+                                </a>
+                            </li>
+                        </ul>
+                          
+                    </div>
+                </div>
+                <div class=""></div>
+            </div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+           Copyright <span>&copy;</span> 2014-2018 科技管理部-数据治理室 All Rights Reserved
+        </footer>
+
+    </body>
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/vue.js"></script>
+    <script src='./js/echarts.min.js'></script>
+    <script src="./js/histogram2.js"></script>
+
+
+    <script>
+        // 头部导航
+        let vm2 = new Vue({
+            el:'#header',
+            data:{
+                
+            },
+            methods:{
+                // 数据地图
+                showDataMapDetail: function(){
+                    $('#downDataMap').css('display','block');
+                },
+                hideDataMapDetail: function(){
+                    $('#downDataMap').css('display','none');
+                },
+                // 权限申请
+                showAccessRequestDetail: function () {
+                    $('#downAccessRequest').css('display','block');
+                },
+                hideAccessRequestDetail: function () {
+                    $('#downAccessRequest').css('display','none');
+                },
+                // 报表数据
+                showReportDataDetail: function () {
+                    $('#downReportData').css('display','block');
+                },
+                hideReportDataDetail: function () {
+                    $('#downReportData').css('display','none');
+                }
+            }
+        });
+
+        // 内容区域
+        let vm1 = new Vue({
+            el:'#tab-content',
+            data:{
+                
+            },
+            methods:{
+                showMetaData: function(){
+                    $('#meta-content').css('display','block');
+                    $('#time-limit-content').css('display','none');
+                },
+                showTimeLimitData: function () {
+                    $('#time-limit-content').css('display','block');
+                    $('#meta-content').css('display','none');
+                }
+            }
+        });
+    
+    </script>
+
+
+    <!-- 柱状图1 -->
+    <script>
+        var dom = document.getElementById("time-limit-content-text1");
+        var myChart = echarts.init(dom);
+    
+        var app = {};
+        option = null;
+
+        option = {
+            color: ['#194E9F'],
+            tooltip : {
+                trigger: 'axis',
+                axisPointer : {           
+                    type : 'shadow'     
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '10%',
+                bottom: '13%',
+                containLabel: true
+            },
+            xAxis : [
+                {
+                    type : 'category',
+                    data : ['5月', '6月'],
+                    axisTick: {
+                        alignWithLabel: true
+                    }
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value',
+                    axisLabel:{
+                        formatter:'{value} h'
+                    }
+                }
+            ],
+            series : [
+                {
+                    name:'每单耗时',
+                    type:'bar',
+                    barWidth: '60%',
+                    data:[47, 38],
+                    label: { // 在顶端显示具体数字
+                        normal: {
+                            show: true,
+                            position: 'inside'
+                        }
+                    },
+                    markLine : { // 虚线效果
+                        lineStyle: {
+                            normal: {
+                                type: 'dashed'
+                            }
+                        },
+                        data : [
+                            [{type : 'max'},{type : 'min'}] //  
+                        ]
+                    }
+                },
+            ]
+        };
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    </script>
+    
+</html>
