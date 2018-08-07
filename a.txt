@@ -1,0 +1,31 @@
+{
+    "rtnCode": "0",
+    "rtnMsg": null,
+    "data": [
+        {
+            "sourceType": "Hive",
+            "dbCount": 282,
+            "tbCount": 60389,
+            "tbCommentCount": 0,
+            "fieldCount": 6478752,
+            "fieldCommentCount": 1484961
+        },
+        {
+            "sourceType": "SAS",
+            "dbCount": 9,
+            "tbCount": 4085,
+            "tbCommentCount": 3578,
+            "fieldCount": 61,
+            "fieldCommentCount": 15209
+        },
+        {
+            "sourceType": "TDSQL",
+            "dbCount": 503,
+            "tbCount": 13589,
+            "tbCommentCount": 0,
+            "fieldCount": 1543591,
+            "fieldCommentCount": 216142
+        },
+        
+    ]
+}

@@ -3,9 +3,9 @@
         <meta charset="utf-8">
         <title>Portal首页-元数据</title>
 
-        <link rel="stylesheet" href="./CSS/main.css">
+        <!-- <link rel="stylesheet" href="./CSS/adaptive.css"> -->
+        <link rel="stylesheet" href="./CSS/metadata.css">
         <link rel="stylesheet" href="./CSS/footer.css">
-
     </head>
 
     <body>
@@ -94,26 +94,43 @@
                 <div class="tab-content">
                     
                     <!-- 元数据 -->
-                    <div class="meta-content" id="meta-content">
-                        <!-- 标题区 -->
-                        <p class="little-triangle"></p>
+                    <div class="meta-content"  id="meta-content">
+                        <!-- 标题 -->
                         <div class="meta-content-title">数据库数量/数据含义饱和度</div>
-                        <!-- 内容 -->
                         <div class="meta-content-text">
-                            <ul class="meta-content-little-icon" v-for="item in metaDataArray">
-                                <li class="meta-content-li">
-                                    <span class="meta-content-little-text">{{item.sourceType}}</span>
-                                    <p class="d-number">数据库数量&nbsp;<span>{{item.dbCount}}</span></p>
-                                    <p class="d-saturation">数据含义饱和度&nbsp;<span>90%</span></p>
-                                </li>
-                            </ul>
-                            <div class="meta-middle-conbine-icon"></div>
-                        </div> 
-                        <!-- 说明注释 -->
-                        <div class="meta-data-description">
+                            <p class="little-triangle"></p>
+                            <!-- TDSQL -->
+                            <div class="meta-content-little-icon l-icon1"  v-for="item in metaDataArray">
+                                <span class="meta-content-little-text l-text1">TDSQL</span>
+                                <p class="d-number1">数据库数量&nbsp;<span>{{metaData.t_dbCount}}</span></p>
+                                <p class="d-saturation1">数据含义饱和度<span>&nbsp;90%</span></p>
+                            </div>
+                            <div class="meta-middle-conbine-icon conbine-icon1"></div>
+                            
+                            <!-- BDP -->
+                            <!-- <div class="meta-content-little-icon l-icon2">
+                                <span class="meta-content-little-text l-text2">&thinsp;BDP<br/><span>HIVE</span></span>
+                                <p class="d-number2">数据库数量<span>&nbsp;{{dbCount[0]}}</span></p>
+                                <p class="d-saturation2">数据含义饱和度<span>&nbsp;70%</span></p>
+                            </div>
+                            <div class="meta-middle-conbine-icon conbine-icon2"></div>   -->
+                            <!-- BDAP -->
+                            <!-- <div class="meta-content-little-icon l-icon3">
+                                <span class="meta-content-little-text l-text3">BDAP<br/>&thinsp;<span>HIVE</span></span>
+                                <p class="d-number3">数据库数量<span>&nbsp;{{dbCount[0]}}</span></p>
+                                <p class="d-saturation3">数据含义饱和度 <span>&nbsp;60%</span></p>
+                            </div>
+                            <div class="meta-middle-conbine-icon conbine-icon3"></div> -->
+                            <!-- SAS -->
+                            <!-- <div class="meta-content-little-icon l-icon4">
+                                <span class="meta-content-little-text l-text4">SAS<br/></span>
+                                <p class="d-number4">数据库数量<span>&nbsp;{{dbCount[1]}}</span></p>
+                                <p class="d-saturation4">数据含义饱和度<span>&nbsp;60%</span></p>
+                            </div> -->
+
                             <p class="meta-remarks-text">注: 数据含义饱和度=含注释字段量/字段总量</p>
                             <p class="time-record">统计时间: 截止到 <span> 2018 </span> 年 <span> 6 </span>月</p>
-                        </div>
+                        </div> 
                     </div>
 
                     <!-- 审批时效 -->
@@ -300,13 +317,34 @@
             let vm1 = new Vue({
                 el:'#tab-content',
                 data:{
+                    // all_dbCount:{
+                    //     t_dbCount:'',
+                    //     b_dbCount:'',
+                    //     s_dbCount:'',
+                    // },
+                    // all_saturation:{
+                    //     t_saturation:'',
+                    //     b_saturation:'',
+                    //     s_saturation:'',
+                    // },
+                    metaData:[],
                     metaDataArray:[],
+                    sourceType:[],
+                    dbCount:[],
+                    dataSaturation:[],
                     timeLimitDataArray:[],
                 },
                 mounted: function () { 
                     this.$http.post("a.txt",{emulateJSON: true}).then(function(data){
                         obj = data.bodyText;
-                        this.metaDataArray = JSON.parse(obj).data;                   
+                        this.metaDataArray = JSON.parse(obj).data; 
+                        console.log(this.metaDataArray); 
+                        for(var i = 0; i< this.metaDataArray.length; i++ ){
+                            this.dbCount[i] = this.metaDataArray[i].dbCount;
+                            this.dataSaturation[i] = parseInt(this.metaDataArray[i].fieldCommentCount / this.metaDataArray[i].fieldCount)
+                        }
+                        // this.metaData.t_dbCount = this.dbCount[2];
+                        // console.log(this.tdsqlCount);                     
                     },function (err) {     
                         console.log(err.status);
                     });
@@ -322,144 +360,78 @@
                     },
                 }
             });
-            
-            // 柱状图1
-            var dom = document.getElementById("time-limit-content-text1");
-            var myChart = echarts.init(dom);
-            var app = {};
-            option = null;
-            option = {
-                color: ['#194E9F'],
-                tooltip : {
-                    trigger: 'axis',
-                    axisPointer : {           
-                        type : 'shadow'     
-                    }
-                },
-                grid: {
-                    left: '3%',
-                    right: '10%',
-                    bottom: '13%',
-                    containLabel: true
-                },
-                xAxis : [
-                    {
-                        type : 'category',
-                        data : ['5月', '6月'],
-                        axisTick: {
-                            alignWithLabel: true
-                        }
-                    }
-                ],
-                yAxis : [
-                    {
-                        type : 'value',
-                        axisLabel:{
-                            formatter:'{value} h'
-                        }
-                    }
-                ],
-                series : [
-                    {
-                        name:'每单耗时',
-                        type:'bar',
-                        barWidth: '60%',
-                        data:[47, 38],
-                        label: { // 在顶端显示具体数字
-                            normal: {
-                                show: true,
-                                position: 'inside'
-                            }
-                        },
-                        markLine : { // 虚线效果
-                            lineStyle: {
-                                normal: {
-                                    type: 'dashed'
-                                }
-                            },
-                            data : [
-                                [{type : 'max'},{type : 'min'}] //  
-                            ]
-                        }
-                    },
-                ]
-            };
-            if (option && typeof option === "object") {
-                myChart.setOption(option, true);
-            }
-
-            }
+        }
                
     </script>
 
 
     <!-- 柱状图1 -->
     <script>
-        // var dom = document.getElementById("time-limit-content-text1");
-        // var myChart = echarts.init(dom);
+        var dom = document.getElementById("time-limit-content-text1");
+        var myChart = echarts.init(dom);
     
-        // var app = {};
-        // option = null;
+        var app = {};
+        option = null;
 
-        // option = {
-        //     color: ['#194E9F'],
-        //     tooltip : {
-        //         trigger: 'axis',
-        //         axisPointer : {           
-        //             type : 'shadow'     
-        //         }
-        //     },
-        //     grid: {
-        //         left: '3%',
-        //         right: '10%',
-        //         bottom: '13%',
-        //         containLabel: true
-        //     },
-        //     xAxis : [
-        //         {
-        //             type : 'category',
-        //             data : ['5月', '6月'],
-        //             axisTick: {
-        //                 alignWithLabel: true
-        //             }
-        //         }
-        //     ],
-        //     yAxis : [
-        //         {
-        //             type : 'value',
-        //             axisLabel:{
-        //                 formatter:'{value} h'
-        //             }
-        //         }
-        //     ],
-        //     series : [
-        //         {
-        //             name:'每单耗时',
-        //             type:'bar',
-        //             barWidth: '60%',
-        //             data:[47, 38],
-        //             label: { // 在顶端显示具体数字
-        //                 normal: {
-        //                     show: true,
-        //                     position: 'inside'
-        //                 }
-        //             },
-        //             markLine : { // 虚线效果
-        //                 lineStyle: {
-        //                     normal: {
-        //                         type: 'dashed'
-        //                     }
-        //                 },
-        //                 data : [
-        //                     [{type : 'max'},{type : 'min'}] //  
-        //                 ]
-        //             }
-        //         },
-        //     ]
-        // };
-        // if (option && typeof option === "object") {
-        //     myChart.setOption(option, true);
-        // }
+        option = {
+            color: ['#194E9F'],
+            tooltip : {
+                trigger: 'axis',
+                axisPointer : {           
+                    type : 'shadow'     
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '10%',
+                bottom: '13%',
+                containLabel: true
+            },
+            xAxis : [
+                {
+                    type : 'category',
+                    data : ['5月', '6月'],
+                    axisTick: {
+                        alignWithLabel: true
+                    }
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value',
+                    axisLabel:{
+                        formatter:'{value} h'
+                    }
+                }
+            ],
+            series : [
+                {
+                    name:'每单耗时',
+                    type:'bar',
+                    barWidth: '60%',
+                    data:[47, 38],
+                    label: { // 在顶端显示具体数字
+                        normal: {
+                            show: true,
+                            position: 'inside'
+                        }
+                    },
+                    markLine : { // 虚线效果
+                        lineStyle: {
+                            normal: {
+                                type: 'dashed'
+                            }
+                        },
+                        data : [
+                            [{type : 'max'},{type : 'min'}] //  
+                        ]
+                    }
+                },
+            ]
+        };
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
     </script>
     
 </html>

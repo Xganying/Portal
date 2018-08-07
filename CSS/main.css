@@ -262,11 +262,22 @@ a{
     background-color: rgb(244,245,248);
 }
 
+/* 小三角图标 */
+.little-triangle{
+    width:0;
+    height: 0;
+    border-right: 40px solid transparent;
+    border-left: 40px solid transparent;
+    border-bottom: 22px solid rgb(244,245,248); 
+    position: relative;
+    left: 28.6%; 
+    top: -18px;
+} 
 /* 元数据标题*/
-.tab-content .meta-content-title{
+.meta-content-title{
     position: relative;
     left: 39%;
-    top: 46px;
+    top: 25px;
     width:409px;
     height: 48px;
     text-align: center;
@@ -278,6 +289,7 @@ a{
     color: #194E9F;
 }
 
+
 /* 元数据内容区域*/
 .meta-content .meta-content-text{
     width: 100%;
@@ -285,31 +297,56 @@ a{
     position: relative;
     top:60px;
 }
-/* 三角形小图标 */
-.meta-content-text .little-triangle{
-    width:0;
-    height: 0;
-    border-right: 40px solid transparent;
-    border-left: 40px solid transparent;
-    border-bottom: 22px solid rgb(244,245,248);
-    position: relative;
-    top: -58%;
-    left: 28.6%;
-}
+
 /* 四个小块 */
-.meta-content-text .meta-content-little-icon{
+.meta-content-text{
+    margin-left: 17%;
+    position: relative;
+    top: -5px;
+}
+.meta-content-little-icon{
     display: inline-block;
     width: 14%;
     height: 100%;
     background-image: url(../images/text-box.png);
     background-size:100% 100%;
+    margin-right: 5.1%;
 }
-.meta-content-text .l-icon1{
-    margin-left: 17%;
+.meta-content-li{
+    display: inline-block;
     position: relative;
-    top: -20px;
+    top: 112px;
 }
-.meta-content-text .l-icon2{
+.meta-content-little-text{
+    position: relative;
+    left: 47.5%;
+    top: -65px;
+    text-align: left;
+    font-weight: bold;
+    color: #194E9F;
+}
+.d-number{
+    position: relative;
+    left: 9%;
+    top: 51.5%;
+    letter-spacing: 1px;
+    color: #194E9F;
+}
+.d-number span{ 
+    text-indent:5px;
+    font-size: 24px;
+}
+.d-saturation{
+    position: relative;
+    left: 9%;
+    top: 55%;
+    letter-spacing: 1px;
+    color: #194E9F;
+}
+.d-saturation span{
+    font-size: 24px;
+}
+/* .meta-content-text .l-icon2{
     margin-left: -5.9%;
 }
 .meta-content-text .l-icon3{
@@ -319,8 +356,16 @@ a{
     margin-left: -5.9%;
     position: relative;
     top: -20px;
-}
+} */
 /* 小块上的文字 */
+/* .meta-content-little-text{
+    position: relative;
+    left: 39.1%;
+    top: 46px;
+    text-align: center;
+    font-weight: bold;
+    color: #194E9F;
+} */
 .l-text1,.l-text2,.l-text3,.l-text4{
     position: relative;
     left: 39.1%;
@@ -407,25 +452,37 @@ a{
     width: 10.3%;
     height: 34px;
     position: relative;
-    top:-25px;
-    left: -2.9%;
+    top:-180px;
+    left: 35%;
     background-image: url(../images/connection-btn.png);
     background-size:100% 100%;
 }
+
+ /* 底部文字描述 */
+ .meta-data-description{
+    width: 100%;
+    height: 50px;
+    position: relative;
+    top: 90px;
+}
 /* 元数据备注文字 */
-.meta-content-text .meta-remarks-text{
+.metaDataDescription{
+    width: 100%;
+    height: 15px;
+}
+.meta-remarks-text{
     position: relative;
     left: 17%;
-    top: 15px;
+     top: 5px; 
     width: 30%;
     font-size: 14px;
     letter-spacing: 0.7px;
     color:  #194E9F;
 }
-.meta-content-text .time-record{
+.time-record{
     position: relative;
     left: 75%;
-    top: -5px;
+    top: -15px;
     width: 30%;
     font-size: 14px;
     letter-spacing: 0.5px;
